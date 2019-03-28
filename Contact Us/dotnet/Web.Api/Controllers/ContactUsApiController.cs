@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Sabio.Services;
 using Sabio.Web.Controllers;
@@ -14,11 +14,13 @@ namespace Sabio.Web.Api.Controllers
     {
         private ILogger _logger;
         private IContactUsService _contactUs;
+        private IEmailService _emailService;
 
-        public ContactUsApiController(ILogger<ContactUsApiController> logger, IContactUsService contactUs) : base(logger)
+        public ContactUsApiController(ILogger<ContactUsApiController> logger, IContactUsService contactUs, IEmailService emailService) : base(logger)
         {
             _logger = logger;
             _contactUs = contactUs;
+            _emailService = emailService;
         }
 
         [HttpPost]
@@ -27,6 +29,7 @@ namespace Sabio.Web.Api.Controllers
             ActionResult result = null;
             try
             {
+                _emailService.ContactUsEmail(model);
                 int id = _contactUs.Insert(model);
                 ItemResponse<int> response = new ItemResponse<int>();
                 response.Item = id;
