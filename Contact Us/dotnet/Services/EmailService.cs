@@ -125,7 +125,7 @@ namespace Sabio.Services
                 PlainTextContent = model.Description
             };
             msg.AddTo(new EmailAddress("v2q2h8z7w6j0y6o1@sabionation.slack.com", "ContactUsAdmin"));
-            await Send(msg); //per Hector's req have Paul change all the place SendGridFunc to Send and line 106 send could be called something else.
+            await Send(msg); 
         }
     }
 }
