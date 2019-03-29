@@ -51,11 +51,17 @@ export default class ContactUs extends React.PureComponent {
         else if (!err.response) {
             SweetAlert("Error", "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com", "error");
         }
-        else if (err.response.data) {
+        else if (!err.response.data) {
             SweetAlert("Error", "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com", "error");
         }
-        else {
+        else if (!err.response.data.errors) {
+            SweetAlert("Error", "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com", "error");
+        }
+        else if (err.response.data.errors) {
             SweetAlert(err.message, err.response.data.errors.toString(), "error");
+        }
+        else {
+            SweetAlert("Error", "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com", "error");
         }
     };
 
