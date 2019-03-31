@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Trans } from "react-i18next";
 import { Collapse, Badge } from "reactstrap";
 import { Link } from "react-router-dom";
-// import styles from "./css/SidebarSubItem.css";
+// import styles from "./css/SidebarSubItem.css"; //file should work now per instructions on mobile, etc
 
 /** Build a sub menu with items inside and attach collapse behavior */
 const SidebarSubItem = ({ item, isActive, handler, children, isOpen }) => (
