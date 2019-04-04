@@ -9,13 +9,13 @@ function Footer() {
           <div className={Styles.footer}>
             <div className={Styles.darkText}>
               {" "}
-              <h1> Connect With Sellers Place </h1>
+              <h1> Sellers Place </h1>
               <p style={{ fontSize: "120%" }}>
                 <address>
-                  <a style={{ color: "deeppink" }} href="https://www.google.com/maps/place/400+Corporate+Pointe+%23300,+Culver+City,+CA+90230"> 400 Corporate Pointe #300 <p> Culver City, CA 90230 </p> </a></address>
+                  <a style={{ color: "#e9227b" }} href="https://www.google.com/maps/place/400+Corporate+Pointe+%23300,+Culver+City,+CA+90230"> 400 Corporate Pointe #300 <p> Culver City, CA 90230 </p> </a></address>
               </p>
               <p style={{ fontSize: "120%" }}>
-                <a style={{ color: "deeppink" }} href="tel:+1-562-307-7589"> 562-307-7589 </a>
+                <a style={{ color: "#e9227b" }} href="tel:+1-562-307-7589"> (562) 307-7589 </a>
               </p>
             </div>
 
