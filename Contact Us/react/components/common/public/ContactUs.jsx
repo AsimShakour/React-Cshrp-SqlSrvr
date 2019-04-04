@@ -5,7 +5,9 @@ import { Formik, Form } from "formik";
 import PropTypes from 'prop-types';
 import * as contactUsService from "../../../services/contactUsService";
 import SweetAlert from "sweetalert";
-import "../public/contactUs/ContactUs.css";
+import "./contactUs/ContactUs.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 const _logger = logger.extend("uPForm");
 
@@ -67,9 +69,12 @@ export default class ContactUs extends React.PureComponent {
 
     render() {
         return (
-            <div>
-                <Formik
-                    initialValues={this.state.contactFormData}
+            <React.Fragment>
+                <NavBar />
+                <Formik style={{
+                }}
+                    initialValues={this.state.contactFormData
+                    }
                     enableReinitialize={true}
                     validationSchema={this.state.targetSchema}
                     onSubmit={this.handleSubmit} >
@@ -84,116 +89,124 @@ export default class ContactUs extends React.PureComponent {
                             , onReset
                         } = props;
                         return (
-                            <div className="wrapper" style={{
-                                backgroundImage: "url(img/bg7.jpg)"
-                                , backgroundPosition: "center"
-                                , backgroundRepeat: "no-repeat"
-                                , backgroundSize: "cover"
-                                , position: "relative"
-                            }}>
-                                <div className="card col-md-4 mx-auto" style={{
-                                    verticalAlign: "bottom",
-                                    color: "white"
-                                    , background: "transparent"
-                                }}>
-                                    <div className="card-header text-bold mx-auto" style={{ background: "transparent" }}>
-                                        <legend> {this.props.title}</legend>
-                                    </div>
-                                    <div className="card-body">
-                                        <Form className="form-horizontal" onSubmit={handleSubmit}>
-                                            <div className="form-group row">
-                                                <div className="col-md-12">
-                                                    <input
-                                                        name="name"
-                                                        type="text"
-                                                        placeholder="Enter Name"
-                                                        className={
-                                                            errors.name &&
-                                                                touched.name
-                                                                ? "form-control error border-danger placeH"
-                                                                : "form-control placeH"
-                                                        }
-                                                        onBlur={handleBlur}
-                                                        value={values.name}
-                                                        onChange={handleChange} />
-                                                    {errors.name &&
-                                                        touched.name && (
-                                                            <span style={{ color: 'white' }} className="input-feedback"> <i className="fas fa-exclamation"></i> <span></span>
-                                                                {errors.name}  i.e. Roberto.
+                            <div className=" wrapperStyleAsim"
+                            >
+                                <div className="row">
+
+                                    <div className="col-md-6 order-md-2 order-lg-2 col-auto" >
+                                        <div className="card col-lg-8 mx-auto" style={{
+                                            background: "transparent"
+                                        }}>
+                                            <div className="mx-auto card-header text-bold" style={{
+                                                background: "transparent"
+
+                                            }}>
+                                                <legend style={{
+                                                    color: "black"
+                                                }}> {this.props.title}</legend>
+                                            </div>
+                                            <div className="card-body">
+                                                <Form className="form-horizontal" onSubmit={handleSubmit}>
+                                                    <div className="form-group row">
+                                                        <div className="col-md-12">
+                                                            <input
+                                                                name="name"
+                                                                type="text"
+                                                                placeholder="enter name"
+                                                                className={
+                                                                    errors.name &&
+                                                                        touched.name
+                                                                        ? "form-control error border-danger placeH"
+                                                                        : "form-control placeH"
+                                                                }
+                                                                onBlur={handleBlur}
+                                                                value={values.name}
+                                                                onChange={handleChange} />
+                                                            {errors.name &&
+                                                                touched.name && (
+                                                                    <span style={{ color: 'red' }} className="input-feedback"> <i className="fas fa-exclamation"></i> <span></span>
+                                                                        {errors.name}  i.e. Roberto.
                                                                         </span>
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <div className="col-md-12">
-                                                    <input
-                                                        name="email"
-                                                        type="email"
-                                                        placeholder="Enter Email Address"
-                                                        className={
-                                                            errors.email &&
-                                                                touched.email
-                                                                ? "form-control error border-danger placeH"
-                                                                : "form-control placeH"
-                                                        }
-                                                        onBlur={handleBlur}
-                                                        value={values.email}
-                                                        onChange={handleChange} />
-                                                    {errors.email &&
-                                                        touched.email && (
-                                                            <span className="input-feedback" style={{
-                                                                color: 'white'
-                                                            }}>
-                                                                <i className="fas fa-exclamation"></i> <span></span>
-                                                                {errors.email}  i.e.  johnsmith@gmail.com .
+                                                                )
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group row">
+                                                        <div className="col-md-12">
+                                                            <input
+                                                                name="email"
+                                                                type="email"
+                                                                placeholder="enter email address"
+                                                                className={
+                                                                    errors.email &&
+                                                                        touched.email
+                                                                        ? "form-control error border-danger placeH"
+                                                                        : "form-control placeH"
+                                                                }
+                                                                onBlur={handleBlur}
+                                                                value={values.email}
+                                                                onChange={handleChange} />
+                                                            {errors.email &&
+                                                                touched.email && (
+                                                                    <span className="input-feedback" style={{
+                                                                        color: 'red'
+                                                                    }}>
+                                                                        <i className="fas fa-exclamation"></i> <span></span>
+                                                                        {errors.email}  i.e.  johnsmith@gmail.com .
                                                                     </span>
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                            <div className="form-group row">
-                                                <div className="col-md-12">
-                                                    <textarea
-                                                        name="description"
-                                                        type="text"
-                                                        placeholder="Enter Description"
+                                                                )
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                    <div className="form-group row">
+                                                        <div className="col-md-12">
+                                                            <textarea
+                                                                name="description"
+                                                                type="text"
+                                                                placeholder="enter description"
 
-                                                        className={errors.description &&
-                                                            touched.description
-                                                            ? "form-control error border-danger placeH"
-                                                            : "form-control placeH"
-                                                        }
+                                                                className={errors.description &&
+                                                                    touched.description
+                                                                    ? "form-control error border-danger placeH"
+                                                                    : "form-control placeH"
+                                                                }
 
-                                                        onBlur={handleBlur}
-                                                        value={values.description}
-                                                        onChange={handleChange}
-                                                    />{errors.description &&
-                                                        touched.description && (
-                                                            <span className="input-feedback" style={{ color: 'white' }}><i className="fas fa-exclamation"></i> <span></span>
-                                                                {errors.description}  i.e.  I need help with reaching out to promoter ASAP because ...
+                                                                onBlur={handleBlur}
+                                                                value={values.description}
+                                                                onChange={handleChange}
+                                                            />{errors.description &&
+                                                                touched.description && (
+                                                                    <span className="input-feedback" style={{ color: 'red' }}><i className="fas fa-exclamation"></i> <span></span>
+                                                                        {errors.description}  i.e.  I need help with reaching out to promoter ASAP because ...
                                                                     </span>
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                            <div className="form-group row text-center">
-                                                <div className="col-md-12">
-                                                    <button type="submit" disabled={isSubmitting} className="mb-1 btn btn-pink">
-                                                        Submit
+                                                                )
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                    <div className="AsimContatcUsForm form-group row text-center" style={{ marginLeft: "0" }}>
+                                                        <div className="col-md-12">
+                                                            <button type="submit" style={{ marginLeft: "0", backgroundColor: "#e9227b", color: "white" }} disabled={isSubmitting} className="AsimContatcUsForm mb-1 btn modalSubmit">
+                                                                Submit
                                                 </button>
-                                                    <button type="reset" className="mb-1 btn btn-warning" onClick={onReset}>Reset </button>
-                                                </div>
+                                                            <button type="reset" style={{ marginLeft: "0" }} className="AsimContatcUsForm mb-1 btn btn-warning" onClick={onReset}>Reset </button>
+                                                        </div>
+                                                    </div>
+                                                </Form>
                                             </div>
-                                        </Form>
+                                        </div>
                                     </div>
+                                    <img className="col-md-6 order-md-1 order-lg-1 img-fluid" alt="Show example of type of artwork a person may see at the event. Such as colorful pink Hispanic art."
+                                        src="https://sabio-s3.s3.us-west-2.amazonaws.com/sellersplace/4701d4f5-01c7-41f8-b14c-27c9ab0b8a6d_Creative_Community_Art.jpg"
+                                    >
+                                    </img>
                                 </div>
                             </div >
                         );
                     }
                     }
                 </Formik >
-            </div >
+                <Footer />
+            </React.Fragment >
         );
     };
 };
