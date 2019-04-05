@@ -1,0 +1,332 @@
+[class*="eventBackground"] {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* begin cover component */
+.fiveHeight {
+  height: 550px;
+}
+
+.coverCenter {
+  height: 550px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12% 5%;
+}
+
+.coverTitle {
+  color: white !important;
+  font-size: 500%;
+}
+
+.coverText {
+  color: white !important;
+  font-size: 150%;
+}
+
+/* end cover component */
+
+.navbar {
+  display: none;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+.navbar-light {
+  display: none;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+.topnavbar-wrapper {
+  display: none;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+.wrapper {
+  display: none;
+}
+.topnavbar {
+  display: none;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+.navbar-expand-lg {
+  display: none;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+header {
+  display: none;
+  max-height: 100%;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+nav {
+  display: none;
+  max-height: 100%;
+  background: aliceblue !important;
+  background-color: aliceblue !important;
+  background-image: aliceblue !important;
+}
+
+.backgroundContainer {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.two {
+  height: "200px";
+}
+
+/* begin wideCol component */
+.marginFive {
+  padding: 3% 5% 2%;
+  text-align: center;
+  background-color: white;
+}
+/* end wideCol component */
+
+/* begin registration widget */
+.centerWidget {
+  text-align: center;
+  background-color: white !important;
+  padding-left: 1%;
+  padding-bottom: 1%;
+}
+/* end registration widget */
+
+/* begin footer component */
+.footer {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align: center;
+  background-color: white !important;
+}
+/* end footer component */
+
+.marginTwo {
+  text-align: center;
+  margin: 10%;
+}
+
+.cover {
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  /* background-position: bottom; */
+  /* background-position: center; */
+  /* object-fit: contain; */
+}
+.backgroundFour {
+  background-position: bottom;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.inputBoxes {
+  margin-top: 58px;
+  text-align: center;
+  color: white;
+}
+
+.backgroundTwo {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.eventLink {
+  color: deeppink !important;
+}
+[class*="marginBTen"] {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-link {
+  font-weight: bold;
+  color: black;
+}
+.nav-link {
+  font-size: 2vw;
+  color: black;
+}
+[class*="nav-link"] {
+  font-size: 2vw;
+}
+em {
+  color: black;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+aside {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  [class*="em"] {
+    color: black;
+  }
+  [class*="fa-bars"] {
+    color: black;
+    display: inline;
+  }
+  [class*="introP"] {
+    color: black;
+  }
+  [class*="navbar-nav flex-row"] {
+    display: none;
+  }
+}
+.darkText {
+  color: black;
+}
+@media only screen and (min-width: 600px) {
+  [class*="dropMobile"] {
+    display: none;
+    float: right;
+    width: 100vh;
+  }
+}
+select {
+  border: none;
+}
+.whiteText {
+  color: white !important;
+}
+.tallDiv {
+  height: 500px;
+  padding: 0;
+}
+[class*="tallDiv-noMarg"] {
+  height: 500px;
+  padding: 0;
+}
+[class*="bullhorn"] {
+  color: white;
+}
+[class*="cut"] {
+  color: white;
+}
+[class*="pin"] {
+  color: white;
+  margin-left: 23%;
+}
+[class*="posRight"] {
+  float: right;
+  margin-right: -500%;
+  position: absolute;
+  right: 0.75em;
+}
+[class*="bars"] {
+  color: black;
+}
+[class*="transparent"] {
+  background: transparent;
+}
+[class*="coverImg"] {
+  height: 80vh;
+}
+[class*="wide"] {
+  width: 200px;
+}
+[class*="Navmarg"] {
+  margin-left: -64%;
+}
+[class*="dropdown-menu"] {
+  width: 102vw;
+}
+@media only screen and (max-width: 600px) {
+  [class*="dropdown-menu"] {
+    width: 102vw !important;
+  }
+  [class*="show"] {
+    width: 100% !important;
+  }
+}
+[class*="dropdown-menu"] {
+  width: 102vw;
+}
+
+.experience {
+  text-align: left;
+  font-size: 55vw;
+  position: absolute;
+  left: 55%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  color: white;
+  margin-top: 20%;
+  margin-left: -25%;
+}
+
+.textLarge {
+  font-size: 9%;
+}
+
+@media only screen and (max-width: 600px) {
+  [class*="textLarge"] {
+    color: white;
+
+    font-size: 18%;
+  }
+}
+
+[class*="coverBack"] {
+  height: "550px";
+}
+
+@media only screen and (max-width: 1024px) {
+  [class*="col-auto"] {
+    max-width: 100vw;
+    width: 100%;
+    text-align: center;
+  }
+  [class*="fullWidth"] {
+    width: 100%;
+  }
+}
+[class*="leftAuto"] {
+  margin-left: auto;
+}
+
+ .asimHomeNavBar em {
+  color: deeppink !important;
+}
+
+ .asimHomeNavBar a {
+  color: deeppink !important;
+}
+
+a .asimHomeNavBar {
+  color: deeppink !important;
+}
+
+.asimHomeNavBar:hover {
+  color: deeppink;
+  border-color: deeppink;
+  background-color: #ffffff;
+}
