@@ -5,11 +5,11 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import "./NavBar.module.css";
 import "./Home.module.css";
+import "./NavBar.module.css";
 
-//Notes for styling. this is the nav bar component its mostly using the deeppink. Hover effects need to be added. Many items will show up twice once in collapsed mode and not collapsed.
-//Bug: classnames with asim... are not working. at next opportunity to fix this. 
+//Notes for styling. this is the nav bar component its mostly using the green. Hover effects need to be added. Many items will show up twice once in collapsed mode and not collapsed.
+//Bug: classnames that start with asim... are not working. at next opportunity to fix this. 
 
 class NavBar extends React.Component {
   state = {
@@ -28,11 +28,21 @@ class NavBar extends React.Component {
           {/* <!-- START navbar header--> */}
           <div className="asimHomeNavBar navbar-header">
             {/* <a className="navbar-brand" href="#/"> */}
-            <div className="asimHomeNavBar brand-logo Navmarg" >
-              <a style={{ color: "deeppink" }} href="/"><div className="fa fa-heart fa-2x" /></a>
+            <div className="brand-logo Navmarg">
+              <img
+                className="img-fluid logo-collapsed"
+                src="https://sabio-s3.s3.us-west-2.amazonaws.com/sellersplace/d6892b9b-381a-44f7-b99c-98f2d23190f2_SLogo_200x91.png"
+                alt="Seller's Place Logo"
+                style={{ height: "31px", objectFit: "contain" }}
+              />
             </div>
-            <div className="brand-logo-collapsed">
-              <a style={{ color: "deeppink" }} href="/"><div className="fa fa-heart fa-2x" /></a>
+            <div className="brand-logo-collapsed ">
+              <img
+                className="img-fluid logo-collapsed"
+                src="https://sabio-s3.s3.us-west-2.amazonaws.com/sellersplace/d6892b9b-381a-44f7-b99c-98f2d23190f2_SLogo_200x91.png"
+                alt="Seller's Place Logo"
+              />
+              {/* <div className="fa fa-heart fa-2x" /> */}
             </div>
           </div>
           {/* <!-- END navbar header--> */}
@@ -53,11 +63,10 @@ class NavBar extends React.Component {
                     <em className="fas fa-bars" />
                   </DropdownToggle>
                   <DropdownMenu className="wide">
-                    <DropdownItem><a style={{ color: "deeppink" }} href="/events">Events</a></DropdownItem>
-                    <DropdownItem><a style={{ color: "deeppink" }} href="/vendors">Craft Vendors</a></DropdownItem>
-                    <DropdownItem><a style={{ color: "deeppink" }} href="/promoters">Event Promoters</a></DropdownItem>
-                    <DropdownItem><a style={{ color: "deeppink" }} href="/venues">Venue Owners</a></DropdownItem>
-                    <DropdownItem><a style={{ color: "deeppink" }} href="/contactus">Contact Us</a></DropdownItem>
+                    <DropdownItem><a style={{}} href="/events">Events</a></DropdownItem>
+                    <DropdownItem><a style={{}} href="/vendors">Craft Vendors</a></DropdownItem>
+                    <DropdownItem><a style={{}} href="/promoters">Event Promoters</a></DropdownItem>
+                    <DropdownItem><a style={{}} href="/venues">Venue Owners</a></DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </li>
@@ -69,29 +78,24 @@ class NavBar extends React.Component {
             {/* <!-- Search icon--> */}
             {/* <!-- Fullscreen (only desktops)--> */}
             <li className="nav-item d-none d-md-block">
-              <a className=" nav-link" href="/events">
-                <em style={{ color: "deeppink" }} className="">Events</em>
+              <a className="asimHomeNavBar nav-link" href="/events">
+                <em style={{}} className="asimHomeNavBar">Events</em>
               </a>
             </li>
             <li className="nav-item">
-              <a className=" nav-link" href="/vendors">
-                <em style={{ color: "deeppink" }} className="">Craft Vendors</em>
+              <a className="asimHomeNavBar nav-link" href="/vendors">
+                <em style={{}} className="asimHomeNavBar">Craft Vendors</em>
                 {/* <em className="icon-magnifier" /> */}
               </a>
             </li>
             <li className="nav-item d-none d-md-block">
-              <a className=" nav-link" href="/promoters">
-                <em style={{ color: "deeppink" }} className="">Event Promoters</em>
+              <a className="asimHomeNavBar nav-link" href="/promoters">
+                <em style={{}} className="asimHomeNavBar">Event Promoters</em>
               </a>
             </li>
             <li className="nav-item d-none d-md-block">
-              <a className=" nav-link" href="/venues">
-                <em style={{ color: "deeppink" }} className="">Venue Owners</em>
-              </a>
-            </li>
-            <li className="nav-item d-none d-md-block">
-              <a className=" nav-link" href="/contactus">
-                <em style={{ color: "deeppink" }} className="">Contact Us</em>
+              <a className="asimHomeNavBar nav-link" href="/venues">
+                <em style={{}} className="asimHomeNavBar">Venue Owners</em>
               </a>
             </li>
             {/* <!-- START Alert menu--> */}
