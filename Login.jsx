@@ -17,13 +17,12 @@ import RegistrationWidget from "../common/public/RegistrationWidget";
 class Login extends PureComponent {
   state = {
     passwordModal: false,
-    password: ""
-    // ,RegistrationWidgetModalIsOpen: false
-    // ,regData: {}
+    password: "",
+    isOpen: false
   };
 
   componentDidMount = () => {
-    logger(toggle())
+    logger("login comp mounted");
   }
 
   onLogin = (values, actions) => {
@@ -82,6 +81,13 @@ class Login extends PureComponent {
     }));
   };
 
+  toggle = () => {
+    let isOpen = false;
+    this.setState(prevState => {
+      isOpen = !prevState.isOpen
+      return { isOpen };
+    });
+  };
 
 
   render() {
@@ -91,16 +97,17 @@ class Login extends PureComponent {
         <Helmet>
           <title>Seller&apos;s Place Login</title>
         </Helmet>
-        <RegistrationWidget isWidget={false} />
+        {this.state.isOpen && <RegistrationWidget modalToggled={this.toggle} isWidget={false} isOpen={this.state.isOpen} />}
         <div className="block-center mt-4 wd-xl">
           <div className="card card-flat">
-            <div className="card-header text-center bg-dark">
+            <a href="/" title="Seller's Place Homepage"> <div className="card-header text-center bg-dark">
               <img
                 src="https://sabio-s3.s3.us-west-2.amazonaws.com/sellersplace/0640bbbe-9e54-4b2b-8f67-33a2f662745f_Sellers_Place_Logo_200x91.png"
                 alt="Seller's Place"
                 className="login-logo"
               />
             </div>
+            </a>
             <div className="card-body">
               <p className="text-center py-2">SIGN IN TO CONTINUE.</p>
               <Formik
@@ -195,8 +202,8 @@ class Login extends PureComponent {
                 }}
               </Formik>
               <p className="pt-3 text-center">Need to Signup?</p>
-              <a className="btn btn-block btn-secondary" onClick={toggle}>
-              {/* <a className="btn btn-block btn-secondary"> */}
+              <a className="btn btn-block btn-secondary" onClick={this.toggle}>
+                {/* <a className="btn btn-block btn-secondary"> */}
                 Register Now
               </a>
             </div>
