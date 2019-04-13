@@ -80,7 +80,7 @@ class Login extends PureComponent {
       passwordModal: !prevState.passwordModal
     }));
   };
-
+//this is to toggle the registration form
   toggle = () => {
     let isOpen = false;
     this.setState(prevState => {
