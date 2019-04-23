@@ -92,9 +92,6 @@ export default class ContactUs extends React.PureComponent {
   };
 
   render() {
-
-    const { contactFormData, targetSchema } = this.state;
-
     return (
       <React.Fragment>
         <Helmet>
@@ -103,9 +100,9 @@ export default class ContactUs extends React.PureComponent {
         <NavBarNew {...this.props} />
         <Formik
           style={{}}
-          initialValues={contactFormData}
+          initialValues={this.state.contactFormData}
           enableReinitialize={true}
-          validationSchema={targetSchema}
+          validationSchema={this.state.targetSchema}
           onSubmit={this.handleSubmit}
         >
           {props => {
@@ -136,7 +133,9 @@ export default class ContactUs extends React.PureComponent {
                         }}
                       >
                         <legend
-                          style={{ color: "black" }}
+                          style={{
+                            color: "black"
+                          }}
                         >
                           {" "}
                           {this.props.title}
