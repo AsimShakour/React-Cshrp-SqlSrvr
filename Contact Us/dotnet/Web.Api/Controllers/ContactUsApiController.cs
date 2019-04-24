@@ -24,6 +24,7 @@ namespace Sabio.Web.Api.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<ItemResponse<int>> Insert(ContactUsAddRequest model)
         {
             ActionResult result = null;
