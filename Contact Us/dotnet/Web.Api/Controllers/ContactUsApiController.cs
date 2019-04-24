@@ -5,6 +5,7 @@ using Sabio.Web.Controllers;
 using Microsoft.Extensions.Logging;
 using Sabio.Web.Models.Responses;
 using Sabio.Models.Requests.ContactUs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Sabio.Web.Api.Controllers
 {
