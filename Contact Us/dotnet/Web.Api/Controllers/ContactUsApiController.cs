@@ -5,7 +5,7 @@ using Sabio.Web.Controllers;
 using Microsoft.Extensions.Logging;
 using Sabio.Web.Models.Responses;
 using Sabio.Models.Requests.ContactUs;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization; //to allow annonymous post 
 
 namespace Sabio.Web.Api.Controllers
 {
@@ -24,8 +24,9 @@ namespace Sabio.Web.Api.Controllers
             _emailService = emailService;
         }
 
+
         [HttpPost]
-        [AllowAnonymous]
+        [AllowAnonymous] //to allow annonymous post 
         public ActionResult<ItemResponse<int>> Insert(ContactUsAddRequest model)
         {
             ActionResult result = null;
