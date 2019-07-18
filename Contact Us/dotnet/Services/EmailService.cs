@@ -29,7 +29,7 @@ namespace Sabio.Services
             await client.SendEmailAsync(msg);
         }
 
-        //Waiting on Template, example of how to use substitution jutsu
+        //Waiting on Template, example of how to use substitution  jutsu
         public async Task Register(EmailBase model)
         {
             Register register = new Register();
