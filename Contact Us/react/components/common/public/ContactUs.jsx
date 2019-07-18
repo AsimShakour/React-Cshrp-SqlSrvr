@@ -56,30 +56,6 @@ export default class ContactUs extends React.PureComponent {
         "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com",
         "error"
       );
-    } else if (!err) {
-      SweetAlert(
-        "Error",
-        "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com",
-        "error"
-      );
-    } else if (!err.response) {
-      SweetAlert(
-        "Error",
-        "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com",
-        "error"
-      );
-    } else if (!err.response.data) {
-      SweetAlert(
-        "Error",
-        "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com",
-        "error"
-      );
-    } else if (!err.response.data.errors) {
-      SweetAlert(
-        "Error",
-        "Sorry, try again with proper format. If unable, email: webmaster@sellersplace.com",
-        "error"
-      );
     } else if (err.response.data.errors) {
       SweetAlert(err.message, err.response.data.errors.toString(), "error");
     } else {
@@ -92,6 +68,9 @@ export default class ContactUs extends React.PureComponent {
   };
 
   render() {
+
+    const { contactFormData, targetSchema } = this.state;
+
     return (
       <React.Fragment>
         <Helmet>
@@ -100,9 +79,9 @@ export default class ContactUs extends React.PureComponent {
         <NavBarNew {...this.props} />
         <Formik
           style={{}}
-          initialValues={this.state.contactFormData}
+          initialValues={contactFormData}
           enableReinitialize={true}
-          validationSchema={this.state.targetSchema}
+          validationSchema={targetSchema}
           onSubmit={this.handleSubmit}
         >
           {props => {
@@ -133,9 +112,7 @@ export default class ContactUs extends React.PureComponent {
                         }}
                       >
                         <legend
-                          style={{
-                            color: "black"
-                          }}
+                          style={{ color: "black" }}
                         >
                           {" "}
                           {this.props.title}
@@ -261,7 +238,7 @@ export default class ContactUs extends React.PureComponent {
                   </div>
                   <div
                     className="col-md-6 order-md-1 order-lg-1"
-                    alt="Show example of type of artwork a person may see at the event. Such as colorful pink Hispanic art."
+                    alt="Showing an example of type of artwork a person may see at an event. Such as colorful pink Hispanic art."
                     style={{
                       marginRight: 0,
                       marginLeft: 0,
@@ -277,7 +254,7 @@ export default class ContactUs extends React.PureComponent {
                       }}
                       src="https://sabio-s3.s3.us-west-2.amazonaws.com/sellersplace/4701d4f5-01c7-41f8-b14c-27c9ab0b8a6d_Creative_Community_Art.jpg"
                       className=""
-                      alt="Show example of type of artwork a person may see at the event. Such as colorful pink Hispanic art."
+                      alt="Show an example of type of artwork a person may see at the event. Such as colorful pink Hispanic art."
                     />
                   </div>
                 </div>
